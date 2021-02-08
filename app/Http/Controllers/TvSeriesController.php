@@ -59,9 +59,10 @@ class TvSeriesController extends Controller
      * @param  \App\Models\TvSeries  $tvSeries
      * @return \Illuminate\Http\Response
      */
-    public function show(TvSeries $tvSeries)
+    public function show(TvSeries $tvseries)
     {
-        //
+        // display single serie details
+        return view('tvseries.show', compact('tvseries'));
     }
 
     /**
