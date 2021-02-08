@@ -107,6 +107,10 @@ class TvSeriesController extends Controller
      */
     public function destroy(TvSeries $tvseries)
     {
-        //
+        //Delete Series
+        $tvseries->delete();
+
+        //Redirect user after deletion
+        return redirect()->route('tvseries.index')->with('success', 'Tv Series succesfully removed!');
     }
 }
