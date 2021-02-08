@@ -14,7 +14,9 @@ class TvSeriesController extends Controller
      */
     public function index()
     {
-        //
+        //showing data on the index pages
+        $tvseries = TvSeries::latest()->paginate(6);
+        return view('tvseries.index', compact('tvseries'))->with(request()->input('page'));
     }
 
     /**
@@ -24,7 +26,7 @@ class TvSeriesController extends Controller
      */
     public function create()
     {
-        return view('tvSeries.create');
+        return view('tvseries.create');
     }
 
     /**
