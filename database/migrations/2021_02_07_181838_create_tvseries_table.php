@@ -13,11 +13,13 @@ class CreateTvseriesTable extends Migration
      */
     public function up()
     {
-        Schema::create('tvseries', function (Blueprint $table) {
+        Schema::create('tv_series', function (Blueprint $table) {
             $table->id();
             $table->string('name');
             $table->string('description');
-
+            $table->string('image_url');
+            $table->integer('episode_number');
+            $table->decimal('rating');
             $table->timestamps();
         });
     }
@@ -29,6 +31,6 @@ class CreateTvseriesTable extends Migration
      */
     public function down()
     {
-        Schema::dropIfExists('tvseries');
+        Schema::dropIfExists('tv_series');
     }
 }
