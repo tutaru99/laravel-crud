@@ -71,9 +71,9 @@ class TvSeriesController extends Controller
      * @param  \App\Models\TvSeries  $tvSeries
      * @return \Illuminate\Http\Response
      */
-    public function edit(TvSeries $tvSeries)
+    public function edit(TvSeries $tvseries)
     {
-        //
+        return view('tvseries.edit', compact('tvseries'));
     }
 
     /**
@@ -83,9 +83,20 @@ class TvSeriesController extends Controller
      * @param  \App\Models\TvSeries  $tvSeries
      * @return \Illuminate\Http\Response
      */
-    public function update(Request $request, TvSeries $tvSeries)
+    public function update(Request $request, TvSeries $tvseries)
     {
-        //
+        $request->validate([
+            'name' => 'required',
+            'description' => 'required',
+            'image_url' => 'required',
+            'episode_number' => 'required',
+            'rating' => 'required',
+        ]);
+           //create a new tv serie
+           $tvseries->update($request->all());
+
+           //redirect user and send friendly msg
+           return redirect()->route('tvseries.index')->with('success', 'Tv Series added successfully');
     }
 
     /**
@@ -94,7 +105,7 @@ class TvSeriesController extends Controller
      * @param  \App\Models\TvSeries  $tvSeries
      * @return \Illuminate\Http\Response
      */
-    public function destroy(TvSeries $tvSeries)
+    public function destroy(TvSeries $tvseries)
     {
         //
     }
