@@ -5,7 +5,7 @@
 <div class="row">
     <div class="col-lg-12 margin-tb">
         <div class="pull-left">
-            <h2>Show Series</h2>
+            <h2>  {{ $tvseries->name }}</h2>
         </div>
         <div class="pull-right">
             <a class="btn btn-primary" href="{{ route('tvseries.index') }}">Back</a>
@@ -13,19 +13,13 @@
     </div>
 </div>
 
-<div class="row">
-    <div class="col-xs-12 col-sm-12 col-md-12">
-        <div class="form-group">
-            <strong>Name:</strong>
-            {{ $tvseries->name }}
-        </div>
+        <div class="col-lg-6">
+    <strong>{{ $tvseries->name }}  </strong> <br>
+        <img src="{{ $tvseries->image_url }}" alt=""> <br>
+       <strong>Number of episodes:</strong>{{ $tvseries->episode_number }} <br>
+       <strong>Rating:  </strong> {{ $tvseries->rating }} <br>
+        {{ $tvseries->description }} <br>
+        </strong>
     </div>
-    <div class="col-xs-12 col-sm-12 col-md-12">
-        <div class="form-group">
-            <strong>Description:</strong>
-            {{ $tvseries->description }}
-        </div>
-    </div>
-</div>
 
 @endsection

@@ -12,6 +12,8 @@
         </div>
     </div>
 </div>
+    <div class="row">
+        <div class="col-lg-6">
 
 @if ($errors->any())
     <div class="alert alert-danger">
@@ -47,7 +49,7 @@
                 <input type="text" name="image_url" class="form-control" value="{{ $tvseries->image_url }}" placeholder="URL">
             </div>
         </div>
-        <div class="col-xs-12 col-sm-12 col-md-3">
+        <div class="col-xs-12 col-sm-12 col-md-5">
             <div class="form-group">
                 <strong>Number of Episodes:</strong>
                 <input type="number" name="episode_number" class="form-control" value="{{ $tvseries->episode_number }}" placeholder="Number of Episodes">
@@ -65,5 +67,18 @@
     </div>
 
 </form>
+    </div>
 
+<div class="col-lg-6">
+    <strong>{{ $tvseries->name }}  </strong> <br>
+        <img src="{{ $tvseries->image_url }}" alt=""> <br>
+       <strong>Number of episodes:</strong>{{ $tvseries->episode_number }} <br>
+       <strong>Rating:  </strong> {{ $tvseries->rating }} <br>
+        {{ $tvseries->description }} <br>
+        </strong>
+    </div>
+
+
+
+</div>
 @endsection
