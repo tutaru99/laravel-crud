@@ -6,8 +6,10 @@
 </head>
 <body>
 <div class="container">
+    @include('.layouts.app')
     <br>
-    @yield('content')
+    <br>
+   
 </div>
 
 </body>

@@ -1,5 +1,4 @@
 @extends('tvseries.layout')
-
 @section('content')
 
 <div class="row">
@@ -9,15 +8,18 @@
         </div>
         <div class="pull-right">
             <a class="btn btn-success" href="{{ route('tvseries.create') }}"> Add New Serie</a>
+            <div class="d-flex align-items-center">
+                {{ $tvseries->links() }}
+            </div>
         </div>
     </div>
 </div>
 
-@if ($message = Session::get('success'))
-    <div class="alert alert-success">
-        <p>{{ $message }}</p>
-    </div>
-@endif
+        @if ($message = Session::get('success'))
+            <div class="alert alert-success">
+                <p>{{ $message }}</p>
+            </div>
+        @endif
 
 
 
@@ -38,14 +40,6 @@
         </strong>
     </div>
     @endforeach
-</div>
-<div class="d-flex">
-    <div class="col-lg-12">
-        <div class="d-flex align-items-center">
-            {{ $tvseries->links() }}
-        </div>
-
-    </div>
 </div>
 
 
